@@ -8,7 +8,7 @@
     tools:context=".First_Fragment">
 
     <Button
-        android:id="@+id/third_fragment"
+        android:id="@+id/third_fragment_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="109dp"
@@ -27,7 +27,7 @@
         android:layout_marginStart="123dp"
         android:layout_marginTop="174dp"
         android:layout_marginEnd="157dp"
-        android:text="this is First Fragment"
+        android:text="this is Third Fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

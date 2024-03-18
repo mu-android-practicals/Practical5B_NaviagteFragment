@@ -3,6 +3,7 @@ package com.example.navigatefragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 // import com.example.navigatefragment.MainActivity;
 
 import android.view.LayoutInflater;
@@ -62,14 +63,16 @@ public class First_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first_, container, false);
-
-        Button button= view.findViewById(R.id.first_fragment_btn);
-
-        button.setOnClickListener(v ->{
-            MainActivity.fragmentManager.beginTransaction().replace(R.id.container,new Second_Fragment(),null).addToBackStack(null).commit();
-
+        Button btnNext = view.findViewById(R.id.first_fragment_btn);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, new Second_Fragment());
+                transaction.addToBackStack(null); // Optional: Add to back stack to enable back navigation
+                transaction.commit();
+            }
         });
-
         return view;
     }
-}
+    }
